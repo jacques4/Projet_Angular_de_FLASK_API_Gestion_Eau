@@ -1,0 +1,45 @@
+
+  <c-row>
+    <c-col xs="12">
+      <p>
+         <h2>Les Statistiques </h2>
+        <br>
+     
+    </c-col>
+    <c-col xs="12" lg="10">
+      <c-card class="mb-6">
+        <c-card-header>
+          Diagramme en Barre
+        </c-card-header>
+        <c-card-body>
+          <c-chart type="bar" [data]="chartBarData"></c-chart>
+        </c-card-body>
+      </c-card>
+    </c-col>
+   <!-- <c-col xs="12" lg="6">
+      <c-card class="mb-4">
+        <c-card-header>
+          Line Chart
+        </c-card-header>
+        <c-card-body>
+          <c-chart type="line" [data]="chartLineData"></c-chart>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>-->
+  <c-row>
+   
+    <c-col xs="12" lg="7">
+      <c-card class="mb-12">
+        <c-card-header>
+          Diagramme Circulaire
+        </c-card-header>
+        <c-card-body>
+          <c-chart type="pie" [data]="chartPieData"></c-chart>
+        </c-card-body>
+      </c-card>
+    </c-col>
+  </c-row>
+  <c-row>
+   
+  </c-row>

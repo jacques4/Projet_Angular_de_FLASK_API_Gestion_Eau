@@ -1,0 +1,77 @@
+<div >
+    <div class="modal-header"><div class="modal-title">Détail de l'Utilisateur <em>{{ utilisateur?.nom + ' '}}</em><em>{{utilisateur?.prenom}}</em></div></div>
+    <div class="modal-body">
+      <div class="row" >
+        <div class="col-md-12">
+  
+          <div class="tab-pane fade show active" id="nav-speci" role="tabpanel" aria-labelledby="nav-speci-tab">
+            <div class="table-responsive">
+              <table class="table  table-bordered  table-nowrap  mb-0">
+                <tbody>
+                <tr>
+                  <th scope="row" style="width: 200px;"><sup style="color: red;">*</sup>Id</th>
+                  <td>{{utilisateur?.id}}</td>
+                </tr>
+                <tr>
+                  <th scope="row" ><sup style="color: red;">*</sup> Matricule</th>
+                  <td>{{utilisateur?.matricule}}</td>
+                  </tr>
+                <tr>
+                  <th scope="row"> <sup style="color: red;">*</sup> Nom</th>
+                  <td>{{utilisateur?.personne?.nom}}</td>
+                </tr>
+                <tr>
+                  <th scope="row"><sup style="color: red;">*</sup>Prenom</th>
+                  <td>{{utilisateur?.personne?.prenom}} </td>
+                </tr>
+                <tr>
+                  <th scope="row"><sup style="color: red;">*</sup> Email </th>
+                  <td>{{utilisateur?.personne?.email}}</td>
+                </tr>
+                <tr>
+                    <th scope="row"><sup style="color: red;">*</sup> Telephone</th>
+                    <td>{{utilisateur?.personne?.tel}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><sup style="color: red;">*</sup>Enregister par</th>
+                    <td>{{utilisateur?.id_utilisateur+' '}}{{utilisateur?.personne?.prenom}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><sup style="color: red;">*</sup> Login</th>
+                    <td>{{utilisateur?.login}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><sup style="color: red;">*</sup> Status</th>
+                    <td >
+                      <span class="badge bg-success" *ngIf="utilisateur?.status">Activé</span>
+                      <span class="badge bg-danger" *ngIf="!utilisateur?.status">Désactivé</span>
+                  </td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><sup style="color: red;">*</sup> Adresse</th>
+                    <td>{{utilisateur?.personne?.adresse}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><sup style="color: red;">*</sup> Profile</th>
+                    <td>{{utilisateur?.profile?.nom}}</td>
+                  </tr>
+                  
+                <tr>
+  
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+  
+        <div class="modal-footer" >
+          <div class="hstack gap-2 " style="margin-left: 700px !important;" >
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal"  (click)="onClose()">Fermer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  

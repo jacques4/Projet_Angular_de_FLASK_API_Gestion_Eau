@@ -1,0 +1,37 @@
+
+<div>
+    <div>
+      <form class="form-horizontal" id="add-form" [formGroup]="form" (ngSubmit)="onCreate()">
+  
+        <div class="modal-header">
+          <div class="modal-title"><h4> Enregistrement d'un profile</h4></div>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+
+            <div class="form-group col-sm-6" >
+              <label class="control-label" for="nom"><sup style="color: red;">*</sup>Nom</label>
+              <input type="text" class="form-control" formControlName="nom" placeholder="* Nom" id="nom"/>
+            </div>
+  
+            <div class="form-group col-sm-6" >
+                <label class="control-label" for="libelle"><sup style="color: red;">*</sup>Libelle</label>
+                <input type="text" class="form-control" formControlName="libelle" placeholder="* libelle" id="Libelle"/>
+            </div>
+  
+          </div>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onClose()">Fermer</button>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Enrégistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,50 @@
+<div>
+    <div>
+      <form class="form-horizontal" id="add-form" [formGroup]="form" (ngSubmit)="onCreate()">
+  
+        <div class="modal-header">
+          <div class="modal-title"><h4> Enregistrement d'une Livraison</h4></div>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="client">Commande de </label>
+                <select class="form-select" formControlName="commande" placeholder="commande" id="commande" title="commande" >
+                  <option *ngFor="let tc of listecommandes " [value]="tc.id">{{tc.client?.nom +' '}}{{tc.client?.prenom}} </option>
+                </select>
+              </div>
+
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="utilisateur">Livrer par </label>
+                <select class="form-select" formControlName="utilisateur" placeholder="utilisateur" id="utilisateur" title="utilisateur" >
+                  <option *ngFor="let tc of listeutilisateur " [value]="tc.id">{{tc.personne?.nom +' '}}{{tc.personne?.prenom}} </option>
+                </select>
+              </div>
+
+            <div class="form-group col-sm-6" >
+                <label class="control-label" for="quantite"><sup style="color: red;">*</sup>Quantite</label>
+                <input type="number" class="form-control" formControlName="quantite" placeholder="* Quantite" id="quantite"/>
+              </div>
+  
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="date"><sup style="color: red;">*</sup>Date</label>
+                <input type="date" class="form-control" formControlName="date" placeholder="* Date" id="date"/>
+            </div>
+
+          </div>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onClose()">Fermer</button>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Enrégistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,68 @@
+<div>
+    <div>
+      <form class="form-horizontal" id="add-form" [formGroup]="form" (ngSubmit)="onCreate()">
+  
+        <div class="modal-header">
+          <div class="modal-title"><h4> Enregistrement d'un client</h4></div>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+
+            <div class="form-group col-xl-12">
+              <label class="control-label" for="typeClient"><sup style="color: red;">*</sup>Type Client</label>
+              <select class="form-select" formControlName="typeClient" placeholder="Type Client" id="typeClient" (change)="onSelectClient()">
+                <option *ngFor="let tc of listeTypeClient " [value]="tc.id">{{tc.libelle}} </option>
+              </select>
+            </div>
+
+            <div class="form-group col-sm-6" >
+              <label class="control-label" for="nom"><sup style="color: red;">*</sup>Nom</label>
+              <input type="text" class="form-control" formControlName="nom" placeholder="* Nom" id="nom"/>
+            </div>
+  
+            <div class="form-group col-sm-6" >
+                <label class="control-label" for="prenom" *ngIf="!isHiden"><sup style="color: red;">*</sup> Prenom </label>
+                <input type="text" class="form-control" formControlName="prenom" placeholder="* Prenom" id="prenom"/>
+            </div>
+  
+            <div class="form-group col-sm-6">
+              <label class="control-label" for="nif" *ngIf="!isHiden2"><sup style="color: red;">*</sup>Numero d'Identification Fical</label>
+              <input type="text" class="form-control" formControlName="nif" placeholder="* Numero " id="nif"/>
+          </div>
+
+
+          <div class="form-group col-sm-6">
+              <label class="control-label" for="numrccm" *ngIf="!isHiden2"><sup style="color: red;">*</sup>Numero RCCM</label>
+              <input type="text" class="form-control" formControlName="numrccm" placeholder="* Numero rccm" id="numrccm"/>
+          </div>
+  
+            <div class="form-group col-sm-6" >
+                <label class="control-label" for="email"><sup style="color: red;">*</sup>Email</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="* Email" id="email"/>
+            </div>
+  
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="tel"><sup style="color: red;">*</sup>Telephone</label>
+                <input type="tel" class="form-control" formControlName="tel" placeholder="* Telephone" id="tel"/>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="adresse"><sup style="color: red;">*</sup>Adresse</label>
+                <input type="text" class="form-control" formControlName="adresse" placeholder="* Adresse" id="adresse"/>
+            </div>
+  
+          </div>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onClose()">Fermer</button>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Enrégistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  

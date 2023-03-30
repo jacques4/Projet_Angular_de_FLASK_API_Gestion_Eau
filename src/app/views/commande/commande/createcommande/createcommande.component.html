@@ -1,0 +1,44 @@
+<div>
+    <div>
+      <form class="form-horizontal" id="add-form" [formGroup]="form" (ngSubmit)="onCreate()">
+  
+        <div class="modal-header">
+          <div class="modal-title"><h4> Enregistrement d'une Commande</h4></div>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="client">Client</label>
+                <select class="form-select" formControlName="client" placeholder="client" id="client" >
+                  <option *ngFor="let tc of listeclients " [value]="tc.id">{{tc.nom +' '}}{{tc.prenom}} </option>
+                </select>
+              </div>
+    
+              <div class="form-group col-sm-6">
+                <label class="control-label" for="produit">Produit</label>
+                <select class="form-select" formControlName="produit" placeholder="produit"  id="produit" >
+                  <option *ngFor="let tc of listeproduits " [value]="tc.id">{{tc.marque?.nom}} </option>
+                </select>
+              </div>
+    
+            <div class="form-group col-sm-6" >
+                <label class="control-label" for="quantite"><sup style="color: red;">*</sup>Quantite</label>
+                <input type="number" class="form-control" formControlName="quantite" placeholder="* Quantite" id="quantite"/>
+              </div>
+          </div>
+  
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onClose()">Fermer</button>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary">Enrégistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
